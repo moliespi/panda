@@ -1,0 +1,970 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyO2wIHXMs4KprkosdJnxkGo",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/moliespi/panda/blob/main/Practica%20calificada%20terminada\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**PRACTICA CALIFICADA**"
+      ],
+      "metadata": {
+        "id": "9wSt2JS_fq53"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "EJERCICIO 1"
+      ],
+      "metadata": {
+        "id": "T5UcS39Sgr7F"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "thevQm_wfpwk",
+        "outputId": "eb63f735-46e6-419c-b229-7609d8dc72e6"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[ 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20]\n"
+          ]
+        }
+      ],
+      "source": [
+        "#-crea un vector de numeros enteros del 1 al 20\n",
+        "import numpy as np\n",
+        "vector = np.arange(1,21)\n",
+        "print(vector)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Crear\n",
+        "np.random.random ((3,3))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "JMNKysQ0ldON",
+        "outputId": "2296a795-4431-4e3f-b916-34fa99a864a3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0.66826623, 0.39873394, 0.736169  ],\n",
+              "       [0.39885513, 0.44514282, 0.34942907],\n",
+              "       [0.93553282, 0.07202862, 0.09211993]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "0f38c0ac",
+        "outputId": "df22d895-c30d-4bce-b568-410504e9cbdf"
+      },
+      "source": [
+        "# Redimension una matriz 4x4 a una matriz 2x8\n",
+        "matrix_4x4 = np.arange(1, 17).reshape(4, 4)\n",
+        "print(\"Original 4x4 matrix:\")\n",
+        "print(matrix_4x4)\n",
+        "\n",
+        "matrix_2x8 = matrix_4x4.reshape(2, 8)\n",
+        "print(\"\\nReshaped 2x8 matrix:\")\n",
+        "print(matrix_2x8)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original 4x4 matrix:\n",
+            "[[ 1  2  3  4]\n",
+            " [ 5  6  7  8]\n",
+            " [ 9 10 11 12]\n",
+            " [13 14 15 16]]\n",
+            "\n",
+            "Reshaped 2x8 matrix:\n",
+            "[[ 1  2  3  4  5  6  7  8]\n",
+            " [ 9 10 11 12 13 14 15 16]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Crear un array con 10 numeros equidistantes entre 0 y 1\n",
+        "np.linspace(0,1,10)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "kRmzJdcokypW",
+        "outputId": "d0e269e2-704b-406a-a7ae-3f62a264ba89"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0.        , 0.11111111, 0.22222222, 0.33333333, 0.44444444,\n",
+              "       0.55555556, 0.66666667, 0.77777778, 0.88888889, 1.        ])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 16
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Concantena dos vectores, vertical y horisontalmente (concatenate)\n",
+        "vector1=np.array([1,2,3])\n",
+        "vector2=np.array([4,5,6])\n",
+        "np.concatenate((vector1,vector2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "cTbSi9xvmLBW",
+        "outputId": "8a4e6a67-02de-4c62-e6b4-99d0ca112f58"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([1, 2, 3, 4, 5, 6])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 25
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "EJERCICIO 2:"
+      ],
+      "metadata": {
+        "id": "W2Rj7WRNnLD1"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "array_1=np.array([10,20,30])\n",
+        "print(array_1)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4PbGSy81nxPs",
+        "outputId": "588ebeb9-9baa-4e76-faf6-4e64225fd7c1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[10 20 30]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "array_2=np.array([(10,20,30),(50,60,70)])\n",
+        "print(array_2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FUGnMGt8oG_t",
+        "outputId": "4b8cbf48-dedc-4509-99c5-43fb5882fef6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[10 20 30]\n",
+            " [50 60 70]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Suma:\n",
+        "sum=(array_1+array_2)\n",
+        "print(\"Suma de vectores: \")\n",
+        "print(sum)\n",
+        "#Resta\n",
+        "array_3=array_1-array_2\n",
+        "print(\"Resta de vectores: \")\n",
+        "print(array_3)\n",
+        "#Multiplicacion\n",
+        "array_4=np.multiply(array_1,array_2)\n",
+        "print(\"Multiplicación: \")\n",
+        "print(array_4)\n",
+        "#División\n",
+        "array_5=np.divide(array_1,array_2)\n",
+        "print(\"División: \")\n",
+        "print(array_5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "wO4xAxjznNcd",
+        "outputId": "28b09702-d863-460a-f492-e115a632a69a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Suma de vectores: \n",
+            "[[ 20  40  60]\n",
+            " [ 60  80 100]]\n",
+            "Resta de vectores: \n",
+            "[[  0   0   0]\n",
+            " [-40 -40 -40]]\n",
+            "Multiplicación: \n",
+            "[[ 100  400  900]\n",
+            " [ 500 1200 2100]]\n",
+            "División: \n",
+            "[[1.         1.         1.        ]\n",
+            " [0.2        0.33333333 0.42857143]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Calcular la media, la mediana y la desviacion estandar\n",
+        "print(array_2)\n",
+        "media=np.mean(array_2)\n",
+        "print(\"Media= \",media)\n",
+        "mediana=np.median(array_2)\n",
+        "print(\"Mediana= \",mediana)\n",
+        "desviacion_estandar=np.std(array_2)\n",
+        "print(\"Desviacion estandar= \",desviacion_estandar)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "7Tvi3-uDp4Sk",
+        "outputId": "962869f1-2d93-4417-fa9b-5637fe395b9b"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[10 20 30]\n",
+            " [50 60 70]]\n",
+            "Media=  40.0\n",
+            "Mediana=  40.0\n",
+            "Desviacion estandar=  21.602468994692867\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Normaliza el vector dividiendo cada elemento por el valor maximo\n",
+        "vector_normalizado=array_2/np.max(array_2)\n",
+        "print(\"Vector normalizado: \")\n",
+        "print(vector_normalizado)\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xzU1XK9oqeHc",
+        "outputId": "1e668cc6-44e8-46ec-97bb-ea2984f4bca1"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vector normalizado: \n",
+            "[[0.14285714 0.28571429 0.42857143]\n",
+            " [0.71428571 0.85714286 1.        ]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Encuentra el indice del valor maximo y minimo en un vector\n",
+        "print(array_2)\n",
+        "indice_maximo=np.array(array_2).argmax()\n",
+        "print(\"Indice del valor máximo: \", indice_maximo)\n",
+        "indice_minimo=np.array(array_2).argmin()\n",
+        "print(\"El indice del valor minimo: \", indice_minimo)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "j7oJG4jRr302",
+        "outputId": "39ab80a6-7c0a-4736-9ae2-5d856a8ed52a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[10 20 30]\n",
+            " [50 60 70]]\n",
+            "Indice del valor máximo:  5\n",
+            "El indice del valor minimo:  0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Multiplicacion matricial entre dos vectores 3x3\n",
+        "array_6=np.array([(1,2,3),(4,5,6),(7,8,9)])\n",
+        "array_7=np.array([(89,28,33),(74,85,96),(70,18,98)])\n",
+        "print(array_6)\n",
+        "print(\"X\")\n",
+        "print(array_7)\n",
+        "print(\"=\")\n",
+        "print(np.multiply(array_6,array_7))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oIloQhNfsli8",
+        "outputId": "9c27e07e-9723-405f-8581-0ace7a2e714a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[1 2 3]\n",
+            " [4 5 6]\n",
+            " [7 8 9]]\n",
+            "X\n",
+            "[[89 28 33]\n",
+            " [74 85 96]\n",
+            " [70 18 98]]\n",
+            "=\n",
+            "[[ 89  56  99]\n",
+            " [296 425 576]\n",
+            " [490 144 882]]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3."
+      ],
+      "metadata": {
+        "id": "JT0C1ExHObvF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Seleccionar los elemntos pares de un vector de numeros enteros\n",
+        "vector_8=np.array([(20,30,40),(40,33,60),(70,80,90)])\n",
+        "print(vector_8)\n",
+        "pares=vector_8[vector_8%2==0]\n",
+        "print(\"Numeros pares encontrados: \")\n",
+        "print(pares)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KEFMVgmnu2PE",
+        "outputId": "84f479af-eb83-4f08-f570-706a75fe9369"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[[20 30 40]\n",
+            " [40 33 60]\n",
+            " [70 80 90]]\n",
+            "Numeros pares encontrados: \n",
+            "[20 30 40 40 60 70 80 90]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "1d5457ae",
+        "outputId": "a36336bf-9ac1-4afc-d8d6-f0310a145299"
+      },
+      "source": [
+        "#Filtrar los valores mayores a 5 en un vector\n",
+        "vector = np.array([1, 6, 3, 8, 2, 9, 4, 7, 5, 10])\n",
+        "print(\"Vector:\")\n",
+        "print(vector)\n",
+        "\n",
+        "filtered_values = vector[vector > 5]\n",
+        "print(\"\\nValues greater than 5:\")\n",
+        "print(filtered_values)"
+      ],
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vector:\n",
+            "[ 1  6  3  8  2  9  4  7  5 10]\n",
+            "\n",
+            "Values greater than 5:\n",
+            "[ 6  8  9  7 10]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Filtrar los valores iguales a 0\n",
+        "vector = np.array([1, 6, 3, 8, 2, 9, 4, 7, 5, 10])\n",
+        "print(\"Vector:\")\n",
+        "print(vector)\n",
+        "\n",
+        "filtered_values = vector[vector==0]\n",
+        "print(\"\\nValues greater than 0:\")\n",
+        "print(filtered_values)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZClJU-wLwQVL",
+        "outputId": "abced113-a1b7-495a-a1ee-4eb273b3617e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vector:\n",
+            "[ 1  6  3  8  2  9  4  7  5 10]\n",
+            "\n",
+            "Values greater than 0:\n",
+            "[]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Filtrar los valores negativos\n",
+        "vector = np.array([1, 6, 3, 8, 2, 9, 4, 7, 5, 10])\n",
+        "print(\"Vector:\")\n",
+        "print(vector)\n",
+        "\n",
+        "filtered_values = vector[vector<0]\n",
+        "print(\"\\nValues greater than 0:\")\n",
+        "print(filtered_values)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "k3XNNMNJwe9z",
+        "outputId": "288b1889-89da-4787-fda5-045d45ec0266"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Vector:\n",
+            "[ 1  6  3  8  2  9  4  7  5 10]\n",
+            "\n",
+            "Values greater than 0:\n",
+            "[]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4."
+      ],
+      "metadata": {
+        "id": "1EBUEAfsOp9W"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#crea un vector de 10 elementos y reemplaza todos los valores mayores que 5 con 0\n",
+        "vector = np.array([1,2,3,4,5,6,7,8,9,10])\n",
+        "print(\"Vector original:\")\n",
+        "print(vector)\n",
+        "\n",
+        "vector[vector > 5] =0\n",
+        "print(\"Vector con valores reemplazados por 0: \")\n",
+        "print(vector)\n"
+      ],
+      "metadata": {
+        "id": "N-Ddy3-5On-f"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#combina dos vectores booleanos utilizando las operaciones & (AND) y | (OR)\n",
+        "vector_booleano1=np.array([True, False, True, True])\n",
+        "vector_booleano2=np.array=([False, True, False, True])\n",
+        "print(\"Vector booleano 1: \",vector_booleano1)\n",
+        "print(\"Vector booleano 2: \", vector_booleano2)\n",
+        "print(\"AND: \" ,vector_booleano1 & vector_booleano2)\n",
+        "print(\"OR: \" ,vector_booleano1 | vector_booleano2)\n"
+      ],
+      "metadata": {
+        "id": "RsiTNJVpPY_H"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#cuenta la cantidad de valores en un vector que son multiplos de 3\n",
+        "vector=np.array=([1,2,3,4,5,6,7,8,9,10])\n",
+        "print(\"Vector: \" ,vector)\n",
+        "cantidad_multiplos_3=np.array(vector[vector %3 ==0]).size\n",
+        "print(\"Cantidad de valores multilplos de 3: \" ,cantidad_multiplos_3)"
+      ],
+      "metadata": {
+        "id": "0RXcFRsHRIf-"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Encuentra los indices de los elementos no nuelos en un vector (np.nonzero)\n",
+        "vector=np.array([1,2,3,4,5,6,7,8,9,10])\n",
+        "print(\"Vector: \", vector)\n",
+        "indices_elementos_no_nulos=np.nonzero(vector)\n",
+        "print(\"Indices de elementos no nulos: \" , indices_elementos_no_nulos)"
+      ],
+      "metadata": {
+        "id": "OyV4zEGVR48g"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "4cf91b29"
+      },
+      "source": [
+        "# Create a sample array\n",
+        "vector = np.array([10, 20, 30, 40, 50])\n",
+        "print(\"Array:\", vector)\n",
+        "\n",
+        "# Get a value from the user\n",
+        "valor_especifico = float(input(\"Ingresa un valor para comparar: \"))\n",
+        "\n",
+        "# Check if all elements are greater than the specified value\n",
+        "todos_mayores = np.all(vector > valor_especifico)\n",
+        "\n",
+        "# Print the result\n",
+        "print(f\"¿Todos los elementos del array son mayores que {valor_especifico} {todos_mayores}\")"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5."
+      ],
+      "metadata": {
+        "id": "wgaWVVg4TX2O"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Calcula es cuadrado de un elemento en cada vector\n",
+        "vector=np.array([1,2,3,4,5,6,7,8,9,10])\n",
+        "print(\"Vector: \",vector)\n",
+        "cuadrado_vector=np.square(vector)\n",
+        "print(\"Cuadrado del vector: \" , cuadrado_vector)"
+      ],
+      "metadata": {
+        "id": "w92KUo5ZTZBK"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#utiliza la funcion exponencial para elevar todos los elementos de un vector a la misma potencia\n",
+        "vector=np.array([1,2,3,4,5,6,7,8,9,10])\n",
+        "print(\"Vector: \",vector)\n",
+        "potencia_vector=np.exp(vector)\n",
+        "print(\"Potencia del vector \",potencia_vector)"
+      ],
+      "metadata": {
+        "id": "X1CgLYWZTy7p"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Encuentra los valores minimos y maximos en cada fila de una martriz\n",
+        "matriz=np.array([(1,2,3),(4,5,6),(7,8,9)])\n",
+        "print(\"Matriz: \",matriz)\n",
+        "minimos_filas=np.min(matriz,axis=1)\n",
+        "print(\"Minimos por filas: \",minimos_filas)\n",
+        "maximos_filas=np.max(matriz,axis=1)\n",
+        "print(\"Maximos por filas: \",maximos_filas)"
+      ],
+      "metadata": {
+        "id": "3zb_LvGSUO__"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#aplica la funcion sin a todos los elementtos de un vectoe y almacena los resultados en otro vector\n",
+        "vector=np.array([1,2,3,4,5,6,7,8,9,10])\n",
+        "print(\"Vector: \", vcetor)\n",
+        "sin_vector=np.sin(vector)\n",
+        "print(\"Vector con la funcion sin: \" ,sin_vector)"
+      ],
+      "metadata": {
+        "id": "hgbBkwW-VB89"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Realiza la transpuesta de una matriz 3x4\n",
+        "matriz=np.array([(1,2,3,4),(5,6,7,8),(9,10,11,12)])\n",
+        "print(\"Matriz: \", matriz)\n",
+        "matriz_transpuesta=np.transpose(matriz)\n",
+        "print(\"Matriz transpuesta: \",matriz_transpuesta)"
+      ],
+      "metadata": {
+        "id": "eXxxsmQvVb0N"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6."
+      ],
+      "metadata": {
+        "id": "bBTGrX32WVbU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "k3nc58o0WVCJ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "1b74bd91"
+      },
+      "source": [
+        "data = {\n",
+        "    'Nombre': ['Juan', 'Maria', 'Pedro', 'Ana', 'Luis', 'Sofia', 'Carlos', 'Laura', 'Diego', 'Elena'],\n",
+        "    'Edad': [25, 30, 22, 35, 28, 29, 40, 32, 26, 31],\n",
+        "    'Ciudad': ['Madrid', 'Barcelona', 'Valencia', 'Sevilla', 'Bilbao', 'Zaragoza', 'Malaga', 'Murcia', 'Palma', 'Granada']\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "print(df)"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Del DataFrame, filtrar personas mayores de 25 años\n",
+        "personas_mayores_25= df[df'Edad'>25]\n",
+        "print(\"Personas mayores de 25 años: \")\n",
+        "print(personas_mayores_25)"
+      ],
+      "metadata": {
+        "id": "CHS9tNXxWzjg"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Añadir una coumna llamada ingresos\n",
+        "df['Ingresos']=[1,2,3,4,5,6,7,8,9,10]"
+      ],
+      "metadata": {
+        "id": "c9c3Vw2FXU0B"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Encontrar el promedio de edad en el DataFrame\n",
+        "\n",
+        "promedio_edad=df ['Edad'].mean()\n",
+        "print(\"Promedio de edades: \" , promedio_edad)"
+      ],
+      "metadata": {
+        "id": "q0PzXZf6XkS_"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Contar cuantas veces aparece cada ciudad en el DataFrame\n",
+        "ciudad_conteo=df['Ciudad'] .value.counts()\n",
+        "print(\"Conteo de ciudades: \")\n",
+        "print(ciudad_conteo)"
+      ],
+      "metadata": {
+        "id": "v7-iytZYYA2M"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Ordenar el DataFrame por 'Edad', de manera descendente y luego ascendete\n",
+        "\n",
+        "df_ordenado_descendente=df.sort_values(by='Edad' ,ascending=False)\n",
+        "print(\"Edades de manera descendente: \")\n",
+        "print(df_ordenado_descendente)\n",
+        "df_ordenado_ascendente=df.sort_values(by='Edad', ascending=True)\n",
+        "print(\"Edades de manera ascendente: \")\n",
+        "print(df_ordenado_ascendente)"
+      ],
+      "metadata": {
+        "id": "4pk9-RuvYWWV"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7."
+      ],
+      "metadata": {
+        "id": "isBr7XlHZRhb"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_excel(\"/content/universidad (1).xlsx\")\n",
+        "print(df)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_DD4eii3mjre",
+        "outputId": "1c23c5f9-2ed1-46f4-e0e9-e753d9835f82"
+      },
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "   Num Control              Carrera  Semestre Inscripción  Id Persona\n",
+            "0     SeNeTe01  Lic. en nutriología         7  2015-05-20           1\n",
+            "1     JeViPi02         Ing. química         8  2015-05-02           2\n",
+            "2     MaFeNú03      Lic. en derecho         6  2015-05-09           3\n",
+            "3     WiVaLó04     Ing. en sistemas         2  2016-12-03           4\n",
+            "4     BaRiDe05     Ing. mecatrónica        10  2018-12-01           5\n",
+            "..         ...                  ...       ...         ...         ...\n",
+            "95    StPeRu96  Lic. en nutriología         2  2015-12-15          96\n",
+            "96    MaRaRí97      Lic. en derecho         7  2016-12-28          97\n",
+            "97    NiBrPa98     Ing. mecatrónica         8  2015-05-14          98\n",
+            "98    LiÁvSa99  Lic. en nutriología         4  2016-05-28          99\n",
+            "99   MoNaBr100     Ing. mecatrónica         2  2018-05-11         100\n",
+            "\n",
+            "[100 rows x 5 columns]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Leer el archivo XLSX\n",
+        "import pandas as pd\n",
+        "df = pd.read_excel(\"/content/universidad (1).xlsx\")\n",
+        "\n",
+        "#en sistemas\n",
+        "sistemas_df = df[df['Carrera'] == 'Ing. en Sistemas']\n",
+        "\n",
+        "cantidad_sistemas = sistemas_df.shape[0]\n",
+        "\n",
+        "print(f\"Cantidad de estudiantes de Ing. de Sistemas: {cantidad_sistemas}\")\n",
+        "\n",
+        "\n",
+        "#en derecho\n",
+        "derecho_df = df[df['Carrera'] == 'Lic. en derecho']\n",
+        "\n",
+        "cantidad_derecho = derecho_df.shape[0]\n",
+        "\n",
+        "print(f\"Cantidad de estudiantes de Lic. en derecho: {cantidad_derecho}\")\n",
+        "\n",
+        "\n",
+        "#se inscribiern en 2015\n",
+        "inscrip_df = df[df['Año'] == '2015']\n",
+        "cantidad_inscrip = inscrip_df.shape[0]\n",
+        "print(f\"Cantidad de estudiantes de incritos en 2015: {cantidad_inscrip}\")\n",
+        "\n",
+        "\n",
+        "#Son del 1 y 2 semestre\n",
+        "semestre_df = df[df['Semestre'] == '1er Semestre']\n",
+        "semestre_df = df[df['Semestre']=='2do Semestre']\n",
+        "cantidad_semestre = semestre_df.shape[0]\n",
+        "print(f\"Cantidad de estudiantes de 1er y 2do semestre: {cantidad_semestre}\")"
+      ],
+      "metadata": {
+        "id": "RqzdXQdoZSJz",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b66bab97-d1b1-45aa-d8ba-84d8f983fd7a"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cantidad de estudiantes de Lic. en derecho: 17\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
